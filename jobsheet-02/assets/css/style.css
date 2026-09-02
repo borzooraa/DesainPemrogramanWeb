@@ -9,7 +9,7 @@ body {
     font-family: "Segoe UI", Arial, sans-serif; /* --> ini untuk daftar proritas teks yang digunakan, dari kiri ke kanan */
     font-size: 15px; /* ++ untuk menentukan ukuran font */
     font-weight: 500; /* untuk menentukan ketebalan */
-    color: #ad4671; /* ini font2 kecil yang tipis*/
+    color: #89385a; /* ini font2 kecil yang tipis*/
     background-color: #fcf5f9; /* backgroun body keseluruhan */
     line-height: 1.5; /* jarak antar paragraf */
 }
@@ -51,7 +51,7 @@ header nav a { /* ini buat golongan beranda, daftar buku, tambah buku, sama daft
 
 /* ===== Main Layout ===== */
 main {
-    max-width: 1000 px; /* semaksimal apapun besar device, yang mainnya bakalan 1000 px max */
+    max-width: 1000px; /* semaksimal apapun besar device, yang mainnya bakalan 1000 px max */
    margin: 2rem auto; /* margin antara header sama main (kotak main) */
     padding: 0 1.5rem; /* menjook ke dalam, atas bawah, kanan kiri (harus di kasih rem) */
 }
@@ -65,46 +65,51 @@ section { /* ini buat kotak */
 }
 
 section h2 { /* ini untuk Text yang gede2, kayanya ini teks header ga sih */
-    margin-bottom: 1rem; 
-    color: #85365c;
+    margin-bottom: 1rem; /* Margin antara h2 dan h3 */
+    color: #85365c; /* warna teks */
+    text-align: center;/* posisi teks */
+}
+
+section #deskripsiSM{ /* pake id, untuk deskripsi SIMPUS-Mini */
+    text-align: center;
 }
 
 /* ===== Kartu Statistik (CSS Grid) ===== */
 /* main section:nth-of-type(2) { */
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    display: grid;/* ini untuk display di beranda, display h3. jadi setieap elemen bakalan jadi 1 kotak */
+    grid-template-columns: repeat(3, 1fr); /*ada 3 kolom, porsinya jadi 1:1:1  */
+    gap: 1rem; /* gap antar kolom, 1rem = 16 px */
 }
 
 /* main section:nth-of-type(2) article { */
-.stats-grid article {
-    background-color: #eef4fa;
-    border-radius: 8px;
-    padding: 1.25rem;
-    text-align: center;
+.stats-grid article { /*sama aja, h3  */
+    background-color: #fcf5f9; /* warna bcakground ha3 */
+    border-radius: 8px; /* kelengkungan  kotak */
+    padding: 1.25rem; /* atas bawah */
+    text-align: center;/* posisis teks */
 }
 
 /* main section:nth-of-type(2) article h3 { */
 .stats-grid article h3 {
-    font-size: 0.95rem;
-    color: #7b537a;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem; /* size font h3 */
+    color: #85365c;
+    margin-bottom: 0.5rem;/* jarak h3 ke p */
 }
 
 /* main section:nth-of-type(2) article p { 
 */
-.stats-grid article p {
+.stats-grid article p { /* deskripsi h3 (12 8 3) */
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1d5b8a;
+    color: #853d60;
 }
 
 
-/* ===== Tabel ===== */
+/* ===== Tabel ===== di buku/list.html*/
 table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 100%; /* lebar berapa persen dari maksimal lebar */
+    border-collapse: collapse; /* agar bergabung jadi garis tipis bukan dikasih jarak */
 }
 
 th, td {
@@ -114,7 +119,7 @@ th, td {
 }
 
 thead {
-    background-color: #1d5b8a;
+    background-color: #85365c;
     color: #fff;
 }
 
@@ -136,7 +141,7 @@ td button {
 }
 
 td button:first-of-type {
-    background-color: #f0ad4e;
+    background-color: #efa133; /* eulisan edit */
     color: #fff;
 }
 
@@ -145,13 +150,13 @@ td button:last-of-type {
     color: #fff;
 }
 
-/* ===== Form ===== */
+/* ===== Form ===== buat di buku dan anggota tambah.html */
 form p {
     margin-bottom: 1rem;
 }
 
 form label {
-    display: block;
+    display: block; /* agar jadi satu baris penuh */
     margin-bottom: 0.35rem;
     font-weight: 600;
     color: #444;
@@ -160,15 +165,15 @@ form label {
 form input,
 form select {
     width: 100%;
-    max-width: 400px;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid #cdd4da;
+    max-width: 1000px;/* biar sama kaya kotaknya */
+    padding: 0.55rem 0.7rem; /* atas-bawah, kanan kiri */
+    border: 1px solid #e9f0f6; /* border line nya, gari pinggir */
     border-radius: 4px;
     font-size: 1rem;
 }
 
 form button[type="submit"] {
-    background-color: #1d5b8a;
+    background-color: #b1487b;
     color: #fff;
     border: none;
     padding: 0.6rem 1.5rem;
@@ -177,14 +182,14 @@ form button[type="submit"] {
     cursor: pointer;
 }
 
-form button[type="submit"]:hover {
-    background-color: #164869;
+form button[type="submit"]:hover { /* kalau di arahin kursornya */
+    background-color: #e08eb5;
 }
 
 /* ===== Footer ===== */
 footer {
     text-align: center;
     padding: 1.25rem;
-    color: #7a8794;
+    color: #a09399;
     font-size: 0.9rem;
 }
