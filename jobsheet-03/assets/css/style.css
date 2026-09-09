@@ -1,0 +1,276 @@
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box; /* untuk headernya yang di atas banget */
+    margin: 0;/* buat nentuin marger header */
+    padding: 0; /* katanya sih buat nentuin margin ke dalam */
+} /* konten : hal di dalam kotak */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif; /* --> ini untuk daftar proritas teks yang digunakan, dari kiri ke kanan */
+    font-size: 15px; /* ++ untuk menentukan ukuran font */
+    font-weight: 500; /* untuk menentukan ketebalan */
+    color: #89385a; /* ini font2 kecil yang tipis*/
+    background-color: #fcf5f9; /* backgroun body keseluruhan */
+    line-height: 1.5; /* jarak antar paragraf */
+}
+
+a { /* ini buat nentuin linknya, kalau aku disini ganti linknya jadi warna pink */
+    color: #d77eab;
+    text-decoration: none; /* jadi ga ada underline linknya */
+}
+
+a:hover { /* tampilan link ketika ditunjuk kursor */
+    text-decoration: underline; /* ada underline */
+}
+
+/* ===== Header & Navbar (Flexbox) ===== */
+header {
+    background-color: #85365c; /* warna header */
+    color: #fff; /* warna judul di header */
+    padding: 1rem 1.5rem; /* atas bawah, kiri kanan */
+    display: flex; 
+    align-items: center; /* biar tepat di tengah kotak */
+    justify-content: space-between; /* agar ada di pojok kanan kiri, dan ada space di antara kedua elemen */
+    flex-wrap: wrap; /* agar layarnya responsif, menyesuaikan layar hp*/
+}
+
+header h1 {
+    font-size: 1.4rem; /* ini header 1 yang tulisan SIMPUS-Mini */
+}
+
+header nav ul { /* ini buat yang di h2,  */
+    list-style: none; /* banyak stylenya, yang aku coba cuma decimal aja bakalan ada 1234 */
+    display: flex; /* flex ini biar jejer horizontal dari kiri ke kanan */
+    gap: 1.25rem; /* gap di antara elemen h2 */
+}
+
+header nav a { /* ini buat golongan beranda, daftar buku, tambah buku, sama daftar anggota */
+    color: #fff; /* warna elemen h2 */
+    font-weight: 500; /* ketebalan elemen h2 */
+}
+
+/* ===== Main Layout ===== */
+main {
+    max-width: 1000px; /* semaksimal apapun besar device, yang mainnya bakalan 1000 px max */
+   margin: 2rem auto; /* margin antara header sama main (kotak main) */
+    padding: 0 1.5rem; /* menjook ke dalam, atas bawah, kanan kiri (harus di kasih rem) */
+}
+
+section { /* ini buat kotak */
+    background-color: #ffdfec;
+    border-radius: 10px; /* nentuin cornernya dari kotak */
+    padding: 1rem;/* menjorok ke dalam antara teks dan kotak */
+    margin-bottom: 1.5rem; /* jarak antar kotak */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Kiri-kanan, Atas-bawah, Kejelasan/keburaman, Warna-Kepekatan Bayangn */
+}
+
+section h2 { /* ini untuk Text yang gede2, kayanya ini teks header ga sih */
+    margin-bottom: 1rem; /* Margin antara h2 dan h3 */
+    color: #85365c; /* warna teks */
+    text-align: center;/* posisi teks */
+}
+
+section #deskripsiSM{ /* pake id, untuk deskripsi SIMPUS-Mini */
+    text-align: center;
+}
+
+/* ===== Kartu Statistik (CSS Grid) ===== */
+/* main section:nth-of-type(2) { */
+.stats-grid {
+    display: grid;/* ini untuk display di beranda, display h3. jadi setieap elemen bakalan jadi 1 kotak */
+    grid-template-columns: repeat(3, 1fr); /*ada 3 kolom, porsinya jadi 1:1:1  */
+    gap: 1rem; /* gap antar kolom, 1rem = 16 px */
+}
+
+/* main section:nth-of-type(2) article { */
+.stats-grid article { /*sama aja, h3  */
+    /* width: 100%; */
+    background-color: #fcf5f9; /* warna bcakground ha3 */
+    border-radius: 8px; /* kelengkungan  kotak */
+    padding: 1.25rem; /* atas bawah */
+    text-align: center;/* posisis teks */
+}
+
+/* main section:nth-of-type(2) article h3 { */
+.stats-grid article h3 {
+    font-size: 0.95rem; /* size font h3 */
+    color: #85365c;
+    margin-bottom: 0.5rem;/* jarak h3 ke p */
+}
+
+/* main section:nth-of-type(2) article p { 
+*/
+.stats-grid article p { /* deskripsi h3 (12 8 3) */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #853d60;
+}
+
+
+/* ===== Tabel ===== di buku/list.html*/
+table {
+    width: 100%; /* lebar berapa persen dari maksimal lebar */
+    border-collapse: collapse; /* agar bergabung jadi garis tipis bukan dikasih jarak */
+}
+
+th, td {
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #e2e6ea;
+}
+
+thead {
+    background-color: #85365c;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
+tbody tr:hover {
+    background-color: #eef4fa;
+}
+
+td button {
+    padding: 0.35rem 0.7rem;
+    margin-right: 0.35rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+td button:first-of-type {
+    background-color: #efa133; /* eulisan edit */
+    color: #fff;
+}
+
+td button:first-of-type:hover {
+ background-color: #efcb99; /* eulisan edit */
+}
+
+td button:last-of-type {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+td button:last-of-type:hover {
+ background-color: #c88e8c; /* eulisan edit */
+}
+
+/* ===== Form ===== buat di buku dan anggota tambah.html */
+form p {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block; /* agar jadi satu baris penuh */
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #444;
+}
+
+form input,
+form select {
+    width: 100%;
+    max-width: 1000px;/* biar sama kaya kotaknya */
+    padding: 0.55rem 0.7rem; /* atas-bawah, kanan kiri */
+    border: 1px solid #e9f0f6; /* border line nya, gari pinggir */
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button[type="submit"] {
+    background-color: #b1487b;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover { /* kalau di arahin kursornya */
+    background-color: #e08eb5;
+
+}
+
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    color: #a09399;
+    font-size: 0.9rem;
+}
+
+/* ===== Tabel Responsif ===== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* ===== Hamburger Menu (checkbox hack) ===== */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Tablet ke bawah */
+@media (max-width: 768px) {
+   .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    /* main {
+        margin: 1rem auto;
+        padding: 0 1rem; 
+    } */
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+   .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    form input,
+    form select {
+        max-width: 100%;
+    }
+}
+.table-responsive {
+    overflow-x: auto;
+}
