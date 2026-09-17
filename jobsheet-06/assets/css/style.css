@@ -220,6 +220,8 @@ footer {
     font-size: 1.6rem;
     color: #fff;
     cursor: pointer;
+     border: none;
+        background: none;
 }
 
 /* ===== Responsive Breakpoints ===== */
@@ -235,6 +237,10 @@ footer {
 @media (max-width: 480px) {
     header {
         position: relative;
+    }
+
+    .nav-open{
+        display: block;
     }
 
     /* main {
