@@ -237,6 +237,12 @@ footer {
         position: relative;
     }
 
+    .nav-open{
+        display: block;
+        border: none;
+        background: none;
+    }
+
     /* main {
         margin: 1rem auto;
         padding: 0 1rem; 
@@ -244,6 +250,8 @@ footer {
 
     .nav-toggle-label {
         display: block;
+        border: none;
+        background: none;
     }
 
     header nav {
